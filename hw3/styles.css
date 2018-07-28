@@ -1,0 +1,57 @@
+body{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-style: italic;
+	margin:0;
+	padding: 0;
+}
+.profit {
+	background-color: black;
+}
+
+.wrap{
+	max-width:960px; 
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.item{
+	background-color: #ffffff;
+
+	padding: 1px;
+	margin: 5px 5px;
+
+	
+	display:flex;
+	flex-wrap: wrap;
+	flex-basis: 400px;
+	flex-grow: 1;
+}
+
+.img{
+	flex-basis: 100px;
+	min-width: 25%;
+	flex-grow:1;
+}
+
+.text{
+	text-align: center;
+	margin:0 10px;
+	
+	flex-basis: 300px;
+	min-width: calc(75% - 20px);
+	flex-grow: 1;
+	
+}
+
+img{
+	max-width: 100%;
+}
+
+@media screen and (max-width: 1000px){
+	.item:nth-child(even){
+		flex-direction: row-reverse;
+	}
+}
+
