@@ -1,0 +1,93 @@
+
+
+.relation{
+    margin: auto;
+    max-width: 1000px;
+    position: relative;
+    background-color: white;
+}
+@media screen and (max-width:400px){
+    .yellow{
+        width:auto;
+    }
+}
+.relation_ratio{
+    
+    padding-top: 56.25%;
+
+}
+.relation_content{
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.yellow{
+    background-color: yellow;
+    flex-grow:1;
+    flex-basis: 100%;
+    order:1;
+}
+.blue{
+    background-color:blue;
+    
+    /* max-height: 50%; */
+}
+
+.green{
+    background-color: green;
+   
+    /* max-height: 50%; */
+}
+
+.element{
+    min-width: 300px;
+}
+
+.column1, .column2{
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+.column1{
+    order: 0;
+}
+
+.column2{
+    order:2
+}
+
+@media screen and (max-width:900px){
+    .element{
+        order: 0;
+    }
+    .column1, .column2{
+        flex-grow: 1;
+        flex-basis: 25%;
+    }
+    .yellow{
+        width: 65%;
+    }
+    .relation_ratio{
+        padding-top: 80%;
+    
+    }
+}
+
+@media screen and (max-width:400px){
+    .relation_content{
+        display: block;
+        position: static;
+    }
+    .relation_ratio{
+        padding-top: 0;
+    }
+}
+
+
