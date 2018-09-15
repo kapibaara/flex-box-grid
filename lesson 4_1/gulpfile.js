@@ -11,7 +11,7 @@ const less = require('gulp-less');
 const config = {
 	root: './src/',
 	css: {
-		src: 'precss/relation.less',
+		src: 'precss/styles.less',
         dest: 'css',
         watch: 'precss/**/*.less',
     },

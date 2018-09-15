@@ -1,17 +1,17 @@
-const gulp = require("gulp");
+const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
-//const concat = require('gulp-concat');
-const gcmq = require('gulp-group-css-media-queries');
 const less = require('gulp-less');
+const browserSync = require('browser-sync').create();
+const gcmq = require('gulp-group-css-media-queries');
+const smartgrid = require('smart-grid');
 
 
 const config = {
 	root: './src/',
 	css: {
-		src: 'precss/relation.less',
+		src: 'precss/styles.less',
         dest: 'css',
         watch: 'precss/**/*.less',
     },
@@ -42,7 +42,8 @@ gulp.task("css", function(){
 
 gulp.task("watch", ['browser-sync'],function(){
     gulp.watch(config.root + config.css.watch, ["css"]);
-    gulp.watch(config.root + config.html.src).on('change', browserSync.reload);
+    gulp.watch(config.root + config.html.src, browserSync.reload);
+    gulp.watch("./smartgrid.js", ["grid"]);
 });
 
 gulp.task('browser-sync', function() {
@@ -51,4 +52,13 @@ gulp.task('browser-sync', function() {
             baseDir: config.root
         }
     });
+});
+
+
+gulp.task('grid', function(){
+    delete require.cache[require.resolve("./smartgrid.js")];
+
+    const options = require("./smartgrid.js");
+    smartgrid(config.root + 'precss', options);
+
 });

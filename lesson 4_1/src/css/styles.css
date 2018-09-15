@@ -1,0 +1,23 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.wrap {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.item {
+  background-color: #ffffff;
+  padding: 1px;
+  margin: 5px 5px;
+  /* width: 30%; */
+  min-width: 30%;
+  flex-basis: 200px;
+}
+
+img {
+  max-width: 100%;
+}
